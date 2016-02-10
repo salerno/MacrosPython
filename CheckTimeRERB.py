@@ -1,7 +1,7 @@
 #!/usr/bin/python 
 # Roberto Salerno
 "A program in python to check the RERB timetable"
-"A program in python to check the RERB timetable"
+"usage: python CheckTimeRERB.py"
 
 import datetime
 import sys
