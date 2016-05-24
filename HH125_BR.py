@@ -51,23 +51,24 @@ for i in xrange( dimHBR ) :
     	    if ( j < -i + dimHBR -1 ) :
                  histoBR.SetBinContent(i+1,j+1,2*H125_BR_H1[i]*H125_BR_H2[j])
 
+#adding axes/titles labels 
 labels= ["aa","bb","cc","dd","ee","ff","gg","hh","ii"]
 xAxis = histoBR.GetXaxis ()
 yAxis = histoBR.GetYaxis ()
 for binIndex in range (1, histoBR.GetNbinsX () + 1) :
     xAxis.SetBinLabel (binIndex, labels[binIndex - 1])
     yAxis.SetBinLabel (binIndex, labels[histoBR.GetNbinsX () - binIndex])
-
-c1=TCanvas("c1","c1",1200,1200)
-c1.SetLogz(1)
-
-histoBR.Draw("COLZNUM")
-histoBR.SetStats(0)
 histoBR.SetTitle("Title")
 histoBR.GetXaxis().SetTitle("X axis title")
 histoBR.GetYaxis().SetTitle("Y axis title")
+
+c1=TCanvas("c1","c1",1200,1200)
+c1.SetLogz(1)
+histoBR.SetStats(0)
 histoBR.GetZaxis().SetRangeUser(0.00000001,1)
-#for 
+histoBR.Draw("COLZNUM")
+
+#print the vectors content
 print H125_BR_H1
 print H125_BR_H2
 
